@@ -68,10 +68,12 @@ pip install torch-spline-conv==latest+${CUDA} -f https://pytorch-geometric.com/w
 If you find the work useful in your research, please consider citing:
 
 ```
-@misc{
-    gal,
-    title={Graph Adversarial Networks: Protecting Information against Adversarial Attacks},
-    author={Peiyuan Liao, Han Zhao, Keyulu Xu, Tommi Jaakkola, Geoffrey Gordon, Stefanie Jegelka, Ruslan Salakhutdinov},
-    year={2020},
+@misc{liao2020graph,
+      title={Graph Adversarial Networks: Protecting Information against Adversarial Attacks}, 
+      author={Peiyuan Liao and Han Zhao and Keyulu Xu and Tommi Jaakkola and Geoffrey Gordon and Stefanie Jegelka and Ruslan Salakhutdinov},
+      year={2020},
+      eprint={2009.13504},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
 }
 ```
