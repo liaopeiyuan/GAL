@@ -5,7 +5,7 @@ Ruslan Salakhutdinov. ICML 2021.
 
 \* Denotes equal contribution
 
-This repository contains a PyTorch implementation of **G**raph **A**dversaria**L** Networks.
+This repository contains a PyTorch implementation of **G**raph **A**dversaria**L** Networks (GAL).
 
 ## Dependencies
 
