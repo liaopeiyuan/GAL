@@ -1,7 +1,7 @@
-# Graph Adversarial Networks: Protecting Information against Adversarial Attacks
+# Information Obfuscation of Graph Neural Networks
 
 Peiyuan Liao*, Han Zhao*, Keyulu Xu*, Tommi Jaakkola, Geoffrey Gordon, Stefanie Jegelka,
-Ruslan Salakhutdinov
+Ruslan Salakhutdinov. ICML 2021.
 
 \* Denotes equal contribution
 
