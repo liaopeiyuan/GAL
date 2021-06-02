@@ -89,7 +89,7 @@ class Net(torch.nn.Module):
 
         res = torch.einsum("ef,ef->e", x_i, x_j)
 
-        return res, F.log_softmax(attr, dim=1), F.log_softmax(att, dim=1)
+        return res, F.log_softmax(attr, dim=1), att
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--use_gdc', action='store_true',
@@ -212,7 +212,15 @@ for seed in [100,200,300,400,500]:
                 link_labels = get_link_labels(pos_edge_index, neg_edge_index)
 
                 loss = F.binary_cross_entropy_with_logits(link_logits, link_labels)
-                loss2 = F.nll_loss(attack_prediction, labels)
+                #print(labels.size())
+                #print(attack_prediction.size())
+                one_hot = torch.cuda.FloatTensor(attack_prediction.size(0), attack_prediction.size(1)).zero_()
+                mask = one_hot.scatter_(1, labels.view(-1,1), 1)
+            
+                nonzero = mask * attack_prediction
+                avg = torch.mean(nonzero, dim = 0)
+                #print(avg)
+                loss2 = torch.abs(torch.max(avg) - torch.min(avg))
 
                 if switch:
                     optimizer.zero_grad()
@@ -225,8 +233,8 @@ for seed in [100,200,300,400,500]:
                     optimizer_att.step()
                     switch = True
                     
-                    #for p in model.attack.parameters():
-                    #    p.data.clamp_(-1, 1)
+                    for p in model.attack.parameters():
+                        p.data.clamp_(-1, 1)
 
                 return loss
 
