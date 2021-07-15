@@ -77,23 +77,20 @@ GAL effectively protects sensitive information. Both panels show t-SNE plots of 
 If you find the work useful in your research, please consider citing:
 
 ```
-@article{DBLP:journals/corr/abs-2009-13504,
-  author    = {Peiyuan Liao and
-               Han Zhao and
-               Keyulu Xu and
-               Tommi S. Jaakkola and
-               Geoffrey J. Gordon and
-               Stefanie Jegelka and
-               Ruslan Salakhutdinov},
-  title     = {Information Obfuscation of Graph Neural Networks},
-  journal   = {CoRR},
-  volume    = {abs/2009.13504},
-  year      = {2020},
-  url       = {https://arxiv.org/abs/2009.13504},
-  archivePrefix = {arXiv},
-  eprint    = {2009.13504},
-  timestamp = {Thu, 01 Oct 2020 09:33:16 +0200},
-  biburl    = {https://dblp.org/rec/journals/corr/abs-2009-13504.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+@InProceedings{pmlr-v139-liao21a,
+  title = 	 {Information Obfuscation of Graph Neural Networks},
+  author =       {Liao, Peiyuan and Zhao, Han and Xu, Keyulu and Jaakkola, Tommi and Gordon, Geoffrey J. and Jegelka, Stefanie and Salakhutdinov, Ruslan},
+  booktitle = 	 {Proceedings of the 38th International Conference on Machine Learning},
+  pages = 	 {6600--6610},
+  year = 	 {2021},
+  editor = 	 {Meila, Marina and Zhang, Tong},
+  volume = 	 {139},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {18--24 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v139/liao21a/liao21a.pdf},
+  url = 	 {http://proceedings.mlr.press/v139/liao21a.html},
+  abstract = 	 {While the advent of Graph Neural Networks (GNNs) has greatly improved node and graph representation learning in many applications, the neighborhood aggregation scheme exposes additional vulnerabilities to adversaries seeking to extract node-level information about sensitive attributes. In this paper, we study the problem of protecting sensitive attributes by information obfuscation when learning with graph structured data. We propose a framework to locally filter out pre-determined sensitive attributes via adversarial training with the total variation and the Wasserstein distance. Our method creates a strong defense against inference attacks, while only suffering small loss in task performance. Theoretically, we analyze the effectiveness of our framework against a worst-case adversary, and characterize an inherent trade-off between maximizing predictive accuracy and minimizing information leakage. Experiments across multiple datasets from recommender systems, knowledge graphs and quantum chemistry demonstrate that the proposed approach provides a robust defense across various graph structures and tasks, while producing competitive GNN encoders for downstream tasks.}
 }
+
 ```
